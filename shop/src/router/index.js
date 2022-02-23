@@ -8,9 +8,24 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
+const Login = () => import ('../components/login/Login')
+const Home = () => import('../components/home/Home')
 
 Vue.use(Router)
 
 export default new Router({
-  routes: []
+  routes: [
+    {
+      path: '/',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      component: Login
+    },
+    {
+      path: '/home',
+      component: Home
+    },
+  ]
 })
